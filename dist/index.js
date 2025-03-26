@@ -23,7 +23,5 @@ const callAPI = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 callAPI();
-const nextButton = document.querySelector('.next-joke');
-nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', () => {
-    callAPI();
-});
+const nextButton = document.querySelector('.btn');
+nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', callAPI);

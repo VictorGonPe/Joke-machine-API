@@ -15,9 +15,7 @@ const callAPI = async () => {
 
 callAPI();
 
-const nextButton = document.querySelector('.next-joke');
-nextButton?.addEventListener('click', () => {
-  callAPI(); 
-});
+const nextButton = document.querySelector('.btn');
+nextButton?.addEventListener('click', callAPI);
 
  
