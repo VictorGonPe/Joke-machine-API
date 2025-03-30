@@ -1,3 +1,7 @@
+let reportAcudits = [{}];
+const valuationDate = new Date().toISOString;
+console.log(valuationDate);
+
 const callAPI = async () => {
   try {
     const response = await fetch('https://icanhazdadjoke.com/', {
