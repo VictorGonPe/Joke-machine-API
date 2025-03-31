@@ -1,4 +1,4 @@
-let currentPoint:number;
+let currentPoint: number;
 
 export function addJoke(datos: string) {
 
@@ -29,9 +29,13 @@ export function rate() {
 
 export function getPoint() {
     return currentPoint;
-} 
+}
 
 export function resetPoint() {
     currentPoint = 0;
 }
 
+export function dataWeather(dataAPIWeather: string) {
+    const textWeather = document.querySelector('.weather');
+    if(textWeather) textWeather.innerHTML = dataAPIWeather;
+}

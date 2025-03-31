@@ -1,31 +1,21 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { addJoke, rate, getPoint, resetPoint } from "./events.js";
 let reportJokes = [];
 let data;
 rate();
-const callAPI = () => __awaiter(void 0, void 0, void 0, function* () {
+const callAPIJoke = async () => {
     try {
-        const response = yield fetch('https://icanhazdadjoke.com/', {
+        const response = await fetch('https://icanhazdadjoke.com/', {
             headers: { Accept: 'application/json' }
         });
-        data = yield response.json();
+        data = await response.json();
         addJoke(data.joke);
         console.log(reportJokes);
-        //return data;
     }
     catch (error) {
         console.log(error);
     }
-});
-callAPI();
+};
+callAPIJoke();
 const nextButton = document.querySelector('.btnNext');
 nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', () => {
     const score = getPoint();
@@ -35,5 +25,5 @@ nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListe
         date: new Date().toISOString()
     });
     resetPoint();
-    callAPI();
+    callAPIJoke();
 });
