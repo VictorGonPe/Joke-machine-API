@@ -1,4 +1,4 @@
-let currentPoint = 0;
+let currentPoint:number;
 
 export function addJoke(datos: string) {
 
@@ -6,14 +6,6 @@ export function addJoke(datos: string) {
     if (p) {
         p.innerText = datos;
     }
-}
-
-export function getPoint() {
-    return currentPoint;
-} 
-
-export function resetPoint() {
-    currentPoint = 0;
 }
 
 export function rate() {
@@ -33,5 +25,13 @@ export function rate() {
         currentPoint = 3;
     })
     return currentPoint;
+}
+
+export function getPoint() {
+    return currentPoint;
+} 
+
+export function resetPoint() {
+    currentPoint = 0;
 }
 
