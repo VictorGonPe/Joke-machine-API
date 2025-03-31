@@ -1,27 +1,23 @@
 import { addJoke, rate, getPoint, resetPoint } from "./events.js";
 
-let reportJokes : {joke: string, score: number, date: string }[] = [];
+let reportJokes: { joke: string, score: number, date: string }[] = [];
+type jokeData = { joke: string, score: number, date: string };
+let data : jokeData;
 
 rate();
+
 
 const callAPI = async () => {
   try {
     const response = await fetch('https://icanhazdadjoke.com/', {
       headers: { Accept: 'application/json' }
     })
-    const data = await response.json();
-    const score =  getPoint();
-
-    reportJokes.push({
-      joke: data.joke,
-      score: score,
-      date: new Date().toISOString()
-    });
+    data = await response.json();
 
     addJoke(data.joke);
-    resetPoint();
 
     console.log(reportJokes);
+    //return data;
 
   } catch (error) {
     console.log(error);
@@ -31,4 +27,16 @@ const callAPI = async () => {
 callAPI();
 
 const nextButton = document.querySelector('.btnNext');
-nextButton?.addEventListener('click', callAPI);
+nextButton?.addEventListener('click', () => {
+
+  const score = getPoint();
+
+  reportJokes.push({
+    joke: data.joke,
+    score: score,
+    date: new Date().toISOString()
+  });
+
+  resetPoint();
+  callAPI();
+});

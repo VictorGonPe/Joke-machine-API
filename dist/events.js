@@ -1,15 +1,9 @@
-let currentPoint = 0;
+let currentPoint;
 export function addJoke(datos) {
     const p = document.getElementById('joke');
     if (p) {
         p.innerText = datos;
     }
-}
-export function getPoint() {
-    return currentPoint;
-}
-export function resetPoint() {
-    currentPoint = 0;
 }
 export function rate() {
     const btnOneStart = document.querySelector('.btnOne');
@@ -25,4 +19,10 @@ export function rate() {
         currentPoint = 3;
     });
     return currentPoint;
+}
+export function getPoint() {
+    return currentPoint;
+}
+export function resetPoint() {
+    currentPoint = 0;
 }
