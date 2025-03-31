@@ -1,13 +1,13 @@
-import { addJoke, rate, getPoint, resetPoint } from "./events.js";
+import { addJoke, rate, getPoint, resetPoint, dataWeather } from "./events.js";
 
 let reportJokes: { joke: string, score: number, date: string }[] = [];
 type jokeData = { joke: string, score: number, date: string };
-let data : jokeData;
+let data: jokeData;
 
 rate();
 
 
-const callAPI = async () => {
+const callAPIJoke = async () => {
   try {
     const response = await fetch('https://icanhazdadjoke.com/', {
       headers: { Accept: 'application/json' }
@@ -17,14 +17,14 @@ const callAPI = async () => {
     addJoke(data.joke);
 
     console.log(reportJokes);
-    //return data;
 
   } catch (error) {
     console.log(error);
   }
 }
 
-callAPI();
+callAPIJoke();
+
 
 const nextButton = document.querySelector('.btnNext');
 nextButton?.addEventListener('click', () => {
@@ -38,5 +38,10 @@ nextButton?.addEventListener('click', () => {
   });
 
   resetPoint();
-  callAPI();
+  callAPIJoke();
 });
+
+
+
+
+

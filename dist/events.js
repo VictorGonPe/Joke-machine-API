@@ -26,3 +26,8 @@ export function getPoint() {
 export function resetPoint() {
     currentPoint = 0;
 }
+export function dataWeather(dataAPIWeather) {
+    const textWeather = document.querySelector('.weather');
+    if (textWeather)
+        textWeather.innerHTML = dataAPIWeather;
+}
