@@ -9,22 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { addJoke, rate, getPoint, resetPoint } from "./events.js";
 let reportJokes = [];
+let data;
 rate();
 const callAPI = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch('https://icanhazdadjoke.com/', {
             headers: { Accept: 'application/json' }
         });
-        const data = yield response.json();
-        const score = getPoint();
-        reportJokes.push({
-            joke: data.joke,
-            score: score,
-            date: new Date().toISOString()
-        });
+        data = yield response.json();
         addJoke(data.joke);
-        resetPoint();
         console.log(reportJokes);
+        //return data;
     }
     catch (error) {
         console.log(error);
@@ -32,4 +27,13 @@ const callAPI = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 callAPI();
 const nextButton = document.querySelector('.btnNext');
-nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', callAPI);
+nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', () => {
+    const score = getPoint();
+    reportJokes.push({
+        joke: data.joke,
+        score: score,
+        date: new Date().toISOString()
+    });
+    resetPoint();
+    callAPI();
+});
