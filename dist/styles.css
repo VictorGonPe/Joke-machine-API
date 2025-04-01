@@ -17,4 +17,15 @@
   width: 20%;
 }
 
+.btnNext {
+  background-color: #FF6E33;
+}
+.btnNext:hover {
+  background-color: #417B5A;
+}
+
+body {
+  background-color: #417B5A;
+}
+
 /*# sourceMappingURL=styles.css.map */
