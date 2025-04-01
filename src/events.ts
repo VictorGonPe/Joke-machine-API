@@ -35,7 +35,11 @@ export function resetPoint() {
     currentPoint = 0;
 }
 
-export function dataWeather(dataAPIWeather: string) {
+export function dataWeather(dataAPIWeather: string, iconUrl?: string) {
     const textWeather = document.querySelector('.weather');
-    if(textWeather) textWeather.innerHTML = dataAPIWeather;
+    if (textWeather) {
+        textWeather.innerHTML = iconUrl
+          ? `<img src="${iconUrl}" alt="icono del clima" style="width: 50px; vertical-align: middle;"> ${dataAPIWeather}`
+          : dataAPIWeather;
+      }
 }

@@ -44,23 +44,20 @@ nextButton?.addEventListener('click', () => {
 
 const fetchWeather = async () => {
   try {
-    const responseWeather= await fetch('https://open-weather13.p.rapidapi.com/city/barcelona/ES', {
+    const response = await fetch('https://open-weather13.p.rapidapi.com/city/barcelona/EN', {
       headers: {
         'x-rapidapi-key': '261147ba53mshe0fbdc7a3104a16p15cc6ejsnbc8601f212b6',
         'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
       }
     });
-    const weatherData = await responseWeather.json();
-    console.log('weatherData:', weatherData);
+    const data = await response.json();
+    const temp = data.main?.temp;
+    const climaticCondition = data.weather[0]?.main;
+    const iconCode = data.weather[0]?.icon;
+    const urlIcon = `https://openweathermap.org/img/wn/${iconCode}@2x.png` 
 
-    const temp = weatherData.main?.temp;
-    const feels = weatherData.main?.feels_like;
-    const condition = weatherData.weather?.[0]?.main;
-
-    if (temp !== undefined && condition) {
-      //const icon = getWeatherIcon(condition);
-      //dataWeather(`${icon} ${condition} | ${((temp - 32)* 5 / 9).toFixed(2)}°C`);
-      dataWeather(`${condition} | ${((temp - 32)* 5 / 9).toFixed(2)}°C`);
+    if (temp !== undefined && climaticCondition && iconCode) {
+      dataWeather(`${climaticCondition} | ${((temp - 32)* 5 / 9).toFixed(2)}°C`,urlIcon);
     } else {
       dataWeather('No se pudo obtener el clima actual');
     }
@@ -74,5 +71,5 @@ const fetchWeather = async () => {
   }
 }
 
-//fetchWeather();
+fetchWeather();
 
