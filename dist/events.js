@@ -5,7 +5,7 @@ export function addJoke(datos) {
         p.innerText = datos;
     }
 }
-export function rate() {
+export function rateButtons() {
     const btnOneStart = document.querySelector('.btnOne');
     const btnTwoStart = document.querySelector('.btnTwo');
     const btnTreeStart = document.querySelector('.btnTree');

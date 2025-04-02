@@ -1,14 +1,15 @@
-import { addJoke, rate, getPoint, resetPoint, dataWeather } from "./events.js";
+import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
 import { API_KEY_WEATHER } from "./api-key.js";
 import { API_KEY_JOKE } from "./api-key.js";
 
 let reportJokes: { joke: string, score: number, date: string }[] = [];
 type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
+let currentJoke: string = '';
 let state = 1;
 let random = (Math.random() *200 + 1);
 
-rate();
+rateButtons();
 
 
 const callAPIJoke = async () => {
@@ -18,9 +19,8 @@ const callAPIJoke = async () => {
       headers: { Accept: 'application/json' }
     })
     data = await response.json();
-
-    addJoke(data.joke);
-
+    currentJoke = data.joke;
+    addJoke(currentJoke);
     console.log(reportJokes);
 
   } catch (error) {
@@ -41,7 +41,8 @@ const callAPIJoke2 = async () => {
       }
     });
     const data = await response.json();
-    addJoke(data.joke);
+    currentJoke = data.joke;
+    addJoke(currentJoke);
     console.log(reportJokes);
 
   } catch (error) {
@@ -56,16 +57,16 @@ const callAPIJoke2 = async () => {
   console.log(`segundo chiste: ${state}`);
 }
 
-callAPIJoke();
+//callAPIJoke();
 
-
+//_______________________________________________________________________________
 const nextButton = document.querySelector('.btnNext');
 nextButton?.addEventListener('click', () => {
 
   const score = getPoint();
 
   reportJokes.push({
-    joke: data.joke,
+    joke: currentJoke,
     score: score,
     date: new Date().toISOString()
   });
@@ -77,7 +78,7 @@ nextButton?.addEventListener('click', () => {
     callAPIJoke2();
   }
 });
-
+//__________________________________________________________________________________
 
 const fetchWeather = async () => {
   try {
