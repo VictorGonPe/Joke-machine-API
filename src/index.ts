@@ -109,5 +109,5 @@ const fetchWeather = async () => {
   }
 }
 
-fetchWeather();
+//fetchWeather();
 
