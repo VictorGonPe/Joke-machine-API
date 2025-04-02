@@ -6,3 +6,5 @@ yarn.lock
 *.log
 test-results.html
 bundle.js
+/dist
+api-key.ts
