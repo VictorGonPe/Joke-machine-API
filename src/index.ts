@@ -7,7 +7,7 @@ type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
 let currentJoke: string = '';
 let state = 1;
-let random = (Math.random() *200 + 1);
+let random = (Math.random() *98 + 1);
 
 rateButtons();
 
@@ -34,7 +34,7 @@ const callAPIJoke = async () => {
 const callAPIJoke2 = async () => {
 
   try {
-    const response = await fetch(`https://chandler-bing-jokes-api.p.rapidapi.com/jokes/${random.toFixed(0)}`, {
+    const response = await fetch(`https://chandler-bing-jokes-api.p.rapidapi.com/jokes/99`, {
       headers: {
         'x-rapidapi-key': API_KEY_JOKE,
         'x-rapidapi-host': 'chandler-bing-jokes-api.p.rapidapi.com'
