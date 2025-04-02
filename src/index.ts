@@ -57,7 +57,7 @@ const callAPIJoke2 = async () => {
   console.log(`segundo chiste: ${state}`);
 }
 
-//callAPIJoke();
+callAPIJoke();
 
 //_______________________________________________________________________________
 const nextButton = document.querySelector('.btnNext');
@@ -109,5 +109,5 @@ const fetchWeather = async () => {
   }
 }
 
-//fetchWeather();
+fetchWeather();
 
