@@ -1,18 +1,20 @@
-import { addJoke, rate, getPoint, resetPoint, dataWeather } from "./events.js";
+import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
 import { API_KEY_WEATHER } from "./api-key.js";
 import { API_KEY_JOKE } from "./api-key.js";
 let reportJokes = [];
 let data;
+let currentJoke = '';
 let state = 1;
 let random = (Math.random() * 200 + 1);
-rate();
+rateButtons();
 const callAPIJoke = async () => {
     try {
         const response = await fetch('https://icanhazdadjoke.com/', {
             headers: { Accept: 'application/json' }
         });
         data = await response.json();
-        addJoke(data.joke);
+        currentJoke = data.joke;
+        addJoke(currentJoke);
         console.log(reportJokes);
     }
     catch (error) {
@@ -30,7 +32,8 @@ const callAPIJoke2 = async () => {
             }
         });
         const data = await response.json();
-        addJoke(data.joke);
+        currentJoke = data.joke;
+        addJoke(currentJoke);
         console.log(reportJokes);
     }
     catch (error) {
@@ -44,12 +47,13 @@ const callAPIJoke2 = async () => {
     state = 1;
     console.log(`segundo chiste: ${state}`);
 };
-callAPIJoke();
+//callAPIJoke();
+//_______________________________________________________________________________
 const nextButton = document.querySelector('.btnNext');
 nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListener('click', () => {
     const score = getPoint();
     reportJokes.push({
-        joke: data.joke,
+        joke: currentJoke,
         score: score,
         date: new Date().toISOString()
     });
@@ -61,6 +65,7 @@ nextButton === null || nextButton === void 0 ? void 0 : nextButton.addEventListe
         callAPIJoke2();
     }
 });
+//__________________________________________________________________________________
 const fetchWeather = async () => {
     var _a, _b, _c;
     try {
@@ -90,4 +95,4 @@ const fetchWeather = async () => {
         };
     }
 };
-//fetchWeather();
+fetchWeather();
