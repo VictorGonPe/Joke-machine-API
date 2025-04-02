@@ -9,3 +9,4 @@ bundle.js
 /dist
 api-key.ts
 
+dist/
