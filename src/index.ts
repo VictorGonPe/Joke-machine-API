@@ -7,7 +7,7 @@ type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
 let currentJoke: string = '';
 let state = 1;
-let random = (Math.random() *98 + 1);
+let random = (Math.random() * 98 + 1);
 
 rateButtons();
 
@@ -90,12 +90,11 @@ const fetchWeather = async () => {
     });
     const data = await response.json();
     const temp = data.main?.temp;
-    const climaticCondition = data.weather[0]?.main;
     const iconCode = data.weather[0]?.icon;
     const urlIcon = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 
-    if (temp !== undefined && climaticCondition && iconCode) {
-      dataWeather(`${climaticCondition} | ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
+    if (temp !== undefined && iconCode) {
+      dataWeather(`  |  ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
     } else {
       dataWeather('No se pudo obtener el clima actual');
     }
