@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Machine</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./src/assets/img/maskFavicon.svg"
+    />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Barrio&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joke Machine</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="icon" type="image/svg+xml" href="./src/assets/img/maskFavicon.svg">
-  <link rel="stylesheet" href="./dist/styles.css">
-</head>
-</head>
+  <body>
+    <div class="ms-5 mt-3">
+      <p class="weather"><b>Loading weather...</b></p>
+    </div>
 
-<body>
-
-  <div class="ms-5 mt-3">
-    <p class="weather"><b>Loading weather...</b></p>
-  </div>
-
-  <div class="d-flex justify-content-center align-items-center position-relative">
-    <div class="magicpattern position-absolute"></div>
-    <div class="card w-75 pt-3 mt-5">   
-      <div class="card-title text-center mt-5 mb-5">
-        <h1>Joke Machine</h1>
-      </div>
-      <div>
-        <p id="joke" class="card-text text-center px-3 pb-2 mb-5">Loading...</p>
-      </div>
-      <div>
-        <div class="d-flex flex-row justify-content-center container-btn">
-          <button class="btn border-success btnOne mb-5"><img src="src/assets/img/star.svg" alt="image star"></button>
-          <button class="btn border-success btnTwo mb-5 "><img src="src/assets/img/star.svg" alt="image star"><img src="src/assets/img/star.svg" alt="image star"></button>
-          <button class="btn border-success btnTree mb-5"><img src="src/assets/img/star.svg" alt="image star"><img src="src/assets/img/star.svg" alt="image star"><img src="src/assets/img/star.svg" alt="image star"></button>
+    <div
+      class="d-flex justify-content-center align-items-center position-relative"
+    >
+      <div class="magicpattern position-absolute"></div>
+      <div class="card w-75 pt-3 mt-5">
+        <div class="card-title text-center mt-5 mb-5">
+          <h1 class="barrio-regular">Joke Machine</h1>
         </div>
-        <button class="btn btnNext border-0 d-flex justify-content-center btn-primary w-50 mb-5">Next Joke</button>
+        <div>
+          <p id="joke" class="card-text text-center px-3 pb-2 mb-5">
+            Loading...
+          </p>
+        </div>
+        <div>
+          <div class="d-flex flex-row justify-content-center container-btn">
+            <button class="btn border-success btnOne mb-5">
+              <img src="src/assets/img/star.svg" alt="image star" />
+            </button>
+            <button class="btn border-success btnTwo mb-5">
+              <img src="src/assets/img/star.svg" alt="image star" /><img
+                src="src/assets/img/star.svg"
+                alt="image star"
+              />
+            </button>
+            <button class="btn border-success btnTree mb-5">
+              <img src="src/assets/img/star.svg" alt="image star" /><img
+                src="src/assets/img/star.svg"
+                alt="image star"
+              /><img src="src/assets/img/star.svg" alt="image star" />
+            </button>
+          </div>
+          <button
+            class="btn btnNext border-0 d-flex justify-content-center btn-primary w-50 mb-5"
+          >
+            Next Joke
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-
-  <script type="module" src="./dist/index.js"></script>
-</body>
-
+    <script type="module" src="./dist/index.js"></script>
+  </body>
 </html>

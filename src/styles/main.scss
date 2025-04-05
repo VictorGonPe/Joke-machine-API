@@ -2,6 +2,13 @@ body {
     background-color: #b3f2cb;
 }
 
+.barrio-regular {
+    font-family: "Barrio", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 .card {
     margin-bottom: 8rem;
     z-index: 10;
@@ -46,6 +53,11 @@ body {
     &:hover {
         background-color: #f44f0d;
     }
+}
+
+h1 {
+    color: #FF6E33;
+    font-size: 4rem;
 }
 
 .magicpattern {
