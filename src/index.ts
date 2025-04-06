@@ -13,7 +13,6 @@ blob?.classList.add('magicpattern');
 
 rateButtons();
 
-
 const callAPIJoke = async () => {
 
   try {
@@ -29,8 +28,6 @@ const callAPIJoke = async () => {
     console.log(error);
   }
   state = 2;
-  console.log(`primer chiste: ${state}`);
-
 }
 
 const callAPIJoke2 = async () => {
@@ -57,15 +54,18 @@ const callAPIJoke2 = async () => {
     };
   }
   state = 1;
-  console.log(`segundo chiste: ${state}`);
+  
 }
 
 callAPIJoke();
 
 //_______________________________________________________________________________
-const nextButton = document.querySelector('.btnNext');
-nextButton?.addEventListener('click', () => {
+const nextButton = document.querySelector('.btnNext') as HTMLButtonElement;
 
+nextButton?.addEventListener('click', () => {
+  if (!nextButton) return;
+
+  nextButton.disabled = true;
   const score = getPoint();
 
   reportJokes.push({
@@ -84,6 +84,7 @@ nextButton?.addEventListener('click', () => {
     blob?.classList.add('magicpattern2');
     blob?.classList.remove('magicpattern');
   }
+  nextButton.disabled = false;
 });
 //__________________________________________________________________________________
 
@@ -115,5 +116,5 @@ const fetchWeather = async () => {
   }
 }
 
-//fetchWeather();
+fetchWeather();
 
