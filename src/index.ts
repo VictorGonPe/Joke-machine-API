@@ -7,10 +7,11 @@ type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
 let currentJoke: string = '';
 let state = 1;
-let random = (Math.random() *98 + 1);
+
+const blob = document.querySelector('.blob');
+blob?.classList.add('magicpattern');
 
 rateButtons();
-
 
 const callAPIJoke = async () => {
 
@@ -27,14 +28,13 @@ const callAPIJoke = async () => {
     console.log(error);
   }
   state = 2;
-  console.log(`primer chiste: ${state}`);
-
 }
 
 const callAPIJoke2 = async () => {
+  const random = (Math.random() * 99 + 1);
 
   try {
-    const response = await fetch(`https://chandler-bing-jokes-api.p.rapidapi.com/jokes/99`, {
+    const response = await fetch(`https://chandler-bing-jokes-api.p.rapidapi.com/jokes/${random}`, {
       headers: {
         'x-rapidapi-key': API_KEY_JOKE,
         'x-rapidapi-host': 'chandler-bing-jokes-api.p.rapidapi.com'
@@ -54,15 +54,18 @@ const callAPIJoke2 = async () => {
     };
   }
   state = 1;
-  console.log(`segundo chiste: ${state}`);
+  
 }
 
 callAPIJoke();
 
 //_______________________________________________________________________________
-const nextButton = document.querySelector('.btnNext');
-nextButton?.addEventListener('click', () => {
+const nextButton = document.querySelector('.btnNext') as HTMLButtonElement;
 
+nextButton?.addEventListener('click', () => {
+  if (!nextButton) return;
+
+  nextButton.disabled = true;
   const score = getPoint();
 
   reportJokes.push({
@@ -74,9 +77,14 @@ nextButton?.addEventListener('click', () => {
   resetPoint();
   if (state === 1) {
     callAPIJoke();
+    blob?.classList.add('magicpattern');
+    blob?.classList.remove('magicpattern2');
   } else {
     callAPIJoke2();
+    blob?.classList.add('magicpattern2');
+    blob?.classList.remove('magicpattern');
   }
+  nextButton.disabled = false;
 });
 //__________________________________________________________________________________
 
@@ -90,12 +98,11 @@ const fetchWeather = async () => {
     });
     const data = await response.json();
     const temp = data.main?.temp;
-    const climaticCondition = data.weather[0]?.main;
     const iconCode = data.weather[0]?.icon;
     const urlIcon = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 
-    if (temp !== undefined && climaticCondition && iconCode) {
-      dataWeather(`${climaticCondition} | ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
+    if (temp !== undefined && iconCode) {
+      dataWeather(`  |  ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
     } else {
       dataWeather('No se pudo obtener el clima actual');
     }
