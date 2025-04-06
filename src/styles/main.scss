@@ -1,33 +1,71 @@
+@use './responsive.scss';
+
+body {
+  background-color: #b3f2cb;
+}
+
+.barrio-regular {
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff6e33;
+  font-size: 4rem;
+}
+
+.delius-swash-caps-regular {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
 .card {
-    margin-bottom: 8rem;
+  margin-bottom: 8rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+}
+
+.weather {
+  color: #6b7fd7;
 }
 
 .card-title {
-    margin: auto;
+  margin: auto;
 }
+
 .card-text {
-    margin: auto;
-    width: 80%;
-    height: 80%;
+  margin: auto;
+  width: 80%;
+  height: 80%;
 }
 
 .btn {
-    margin: auto;
-    width: 20%;
-    &:hover {
-        background-color: #417B5A;
-        color: white;
-    }
-    &:active {
-        filter: grayscale(80);
-    } 
+  margin: auto;
+  width: 15%;
+  background-color: #6edb98;
+
+  &:hover {
+    background-color: #09a44c;
+    color: white;
+  }
+
+  &:active {
+    background-color: #4f6056 !important;
+    filter: grayscale(80);
+    color: white !important;
+  }
+}
+
+.container-btn {
+  margin: auto;
+  width: 50%;
 }
 
 .btnNext {
-    background-color: #FF6E33 ;
-    
+  background-color: #ff6e33;
+  &:hover {
+    background-color: #f44f0d;
+  }
 }
 
-body {
-    background-color: #417B5A;
-}
