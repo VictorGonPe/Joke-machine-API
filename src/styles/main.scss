@@ -1,136 +1,157 @@
 body {
-    background-color: #b3f2cb;
+  background-color: #b3f2cb;
 }
 
 .barrio-regular {
-    font-family: "Barrio", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff6e33;
+  font-size: 4rem;
+}
+
+.delius-swash-caps-regular {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+}
 
 .card {
-    margin-bottom: 8rem;
-    z-index: 10;
-    background: transparent;
-    border: none;
+  margin-bottom: 8rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+}
+
+.weather {
+  color: #6b7fd7;
 }
 
 .card-title {
-    margin: auto;
+  margin: auto;
 }
 
 .card-text {
-    margin: auto;
-    width: 80%;
-    height: 80%;
+  margin: auto;
+  width: 80%;
+  height: 80%;
 }
 
 .btn {
-    margin: auto;
-    width: 15%;
-    background-color: #6edb98;
+  margin: auto;
+  width: 15%;
+  background-color: #6edb98;
 
-    &:hover {
-        background-color: #09a44c;
-        color: white;
-    }
+  &:hover {
+    background-color: #09a44c;
+    color: white;
+  }
 
-    &:active {
-        background-color: #4f6056 !important; 
-        filter: grayscale(80);
-        color: white !important;
-    }
+  &:active {
+    background-color: #4f6056 !important;
+    filter: grayscale(80);
+    color: white !important;
+  }
 }
 
 .container-btn {
-    margin: auto;
-    width: 50%;
+  margin: auto;
+  width: 50%;
 }
 
 .btnNext {
-    background-color: #FF6E33;
-    &:hover {
-        background-color: #f44f0d;
-    }
-}
-
-h1 {
-    color: #FF6E33;
-    font-size: 4rem;
+  background-color: #ff6e33;
+  &:hover {
+    background-color: #f44f0d;
+  }
 }
 
 .magicpattern {
-    z-index: -1;
-    inset: 0;
-    margin: auto;
-    left: -180px;
-    top: -100px;
-    max-width: 70%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M909.5 625Q844 750 706 729t-230.5 56q-92.5 77-164-9.5t-87-181Q209 500 203.5 390T318 294.5Q438 309 502 303t211.5-35.5Q861 238 918 369t-8.5 256Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23ebebeb%22 d=%22M909.5 625Q844 750 706 729t-230.5 56q-92.5 77-164-9.5t-87-181Q209 500 203.5 390T318 294.5Q438 309 502 303t211.5-35.5Q861 238 918 369t-8.5 256Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  margin: auto;
+  left: -180px;
+  top: -100px;
+  max-width: 70%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M909.5 625Q844 750 706 729t-230.5 56q-92.5 77-164-9.5t-87-181Q209 500 203.5 390T318 294.5Q438 309 502 303t211.5-35.5Q861 238 918 369t-8.5 256Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23ebebeb%22 d=%22M909.5 625Q844 750 706 729t-230.5 56q-92.5 77-164-9.5t-87-181Q209 500 203.5 390T318 294.5Q438 309 502 303t211.5-35.5Q861 238 918 369t-8.5 256Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+.magicpattern2 {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  margin: auto;
+  left: -180px;
+  top: 0px;
+  max-width: 70%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M700.5 587Q674 674 587 723t-142.5-31.5Q389 611 268 555.5t-35-146q86-90.5 176.5-225T670 105q170 55 113.5 225t-83 257Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23ebebeb%22 d=%22M700.5 587Q674 674 587 723t-142.5-31.5Q389 611 268 555.5t-35-146q86-90.5 176.5-225T670 105q170 55 113.5 225t-83 257Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 
-
 @media (max-width: 1500px) {
-    .magicpattern {
-        right: -60px;
-        top: -150px;
-        background-size: cover;
-        width: 90%;
-    }
+  .magicpattern {
+    right: -60px;
+    top: -150px;
+    background-size: cover;
+    width: 90%;
+  }
 
-    .btn {
-        margin-inline: 8%;
-    }
-    .btnNext {
-        margin: auto;
-    }
+  .btn {
+    margin-inline: 8%;
+  }
+  .btnNext {
+    margin: auto;
+  }
 }
 
 @media (max-width: 1200px) {
-    .magicpattern {
-        max-width: 1000px;
-        width: 100%;
-        
-        right: -50px;
-        top: -120px;
-    }
-    .btn {
-        margin-inline: 5%;
-        padding-inline: 10px;
-    }
-    .btnNext {
-        margin: auto;
-    }
-
+  .magicpattern {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    right: -50px;
+    top: -120px;
+  }
+  .btn {
+    margin-inline: 5%;
+    padding-inline: 10px;
+  }
+  .btnNext {
+    margin: auto;
+  }
 }
 
 @media (max-width: 850px) {
-    .magicpattern {
-        max-width: 1000px;
-        width: 120%;
-        top: -150px;
-    }
-    .btn {
-        padding-inline: 1px;
-        width: 40%;
-    }
-    .btnNext {
-        margin: auto;
-        width: 90% !important;
-    }
+  .magicpattern {
+    max-width: 1000px;
+    width: 120%;
+    top: -150px;
+  }
+  .btn {
+    padding-inline: 1px;
+    width: 40%;
+  }
+  .btnNext {
+    margin: auto;
+    width: 90% !important;
+  }
+  p {
+    width: 100% !important;
+  }
 }
 
-
 @media (max-width: 550px) {
-    .magicpattern {
-        max-width: 700px;
-        width: 140%;
-        top: -150px;
-    }
-
+  .magicpattern {
+    max-width: 700px;
+    width: 140%;
+    top: -150px;
+  }
 }
