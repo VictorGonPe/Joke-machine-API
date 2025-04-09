@@ -1,5 +1,5 @@
 export const config = {
-    apiKeyWeather: process.env.API_KEY_WEATHER || '',
-    apiKeyJoke: process.env.API_KEY_JOKE || ''
+    weatherKey: import.meta.env.VITE_API_KEY_WEATHER,
+    jokeKey: import.meta.env.VITE_API_KEY_JOKE,
   };
 
