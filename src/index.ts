@@ -1,5 +1,7 @@
 import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
 import { API_KEY_WEATHER, API_KEY_JOKE } from './config';
+import dotenv from 'dotenv';
+dotenv.config();
 
 let reportJokes: { joke: string, score: number, date: string }[] = [];
 type jokeData = { joke: string, score: number, date: string };
