@@ -1,5 +1,5 @@
 import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
-import { API_KEY_WEATHER, API_KEY_JOKE } from './config';
+import { config } from "./config"
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -8,8 +8,6 @@ type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
 let currentJoke: string = '';
 let state = 1;
-const weatherKey = process.env.API_KEY_WEATHER;
-const jokeKey = process.env.API_KEY_JOKE;
 
 const blob = document.querySelector('.blob');
 blob?.classList.add('magicpattern');
@@ -39,7 +37,7 @@ const callAPIJoke2 = async () => {
   try {
     const response = await fetch(`https://chandler-bing-jokes-api.p.rapidapi.com/jokes/${random}`, {
       headers: {
-        'x-rapidapi-key': API_KEY_JOKE,
+        'x-rapidapi-key': config.apiKeyJoke,
         'x-rapidapi-host': 'chandler-bing-jokes-api.p.rapidapi.com'
       }
     });
@@ -96,7 +94,7 @@ const callAPIWeather = async () => {
   try {
     const response = await fetch('https://open-weather13.p.rapidapi.com/city/barcelona/EN', {
       headers: {
-        'x-rapidapi-key': API_KEY_WEATHER,
+        'x-rapidapi-key':config.apiKeyWeather,
         'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
       }
     });
