@@ -1,12 +1,13 @@
 import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
-import { API_KEY_WEATHER } from "./api-key.js";
-import { API_KEY_JOKE } from "./api-key.js";
+import { API_KEY_WEATHER, API_KEY_JOKE } from './config';
 
 let reportJokes: { joke: string, score: number, date: string }[] = [];
 type jokeData = { joke: string, score: number, date: string };
 let data: jokeData;
 let currentJoke: string = '';
 let state = 1;
+const weatherKey = process.env.API_KEY_WEATHER;
+const jokeKey = process.env.API_KEY_JOKE;
 
 const blob = document.querySelector('.blob');
 blob?.classList.add('magicpattern');
@@ -54,7 +55,7 @@ const callAPIJoke2 = async () => {
     };
   }
   state = 1;
-  
+
 }
 
 callAPIJoke();
@@ -79,6 +80,7 @@ nextButton?.addEventListener('click', () => {
     callAPIJoke();
     blob?.classList.add('magicpattern');
     blob?.classList.remove('magicpattern2');
+    //classTogle
   } else {
     callAPIJoke2();
     blob?.classList.add('magicpattern2');
@@ -88,7 +90,7 @@ nextButton?.addEventListener('click', () => {
 });
 //__________________________________________________________________________________
 
-const fetchWeather = async () => {
+const callAPIWeather = async () => {
   try {
     const response = await fetch('https://open-weather13.p.rapidapi.com/city/barcelona/EN', {
       headers: {
@@ -116,5 +118,5 @@ const fetchWeather = async () => {
   }
 }
 
-fetchWeather();
+//callAPIWeather();
 
