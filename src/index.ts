@@ -1,6 +1,5 @@
-import { addJoke, getPoint, resetPoint, dataWeather, rateButtons } from "./events.js";
+import { addJoke, getPoint, resetPoint, addWeather, rateButtons } from "./events.js";
 import { config } from "./config"
-console.log('JOKE KEY:', import.meta.env.VITE_API_KEY_JOKE);
 
 
 let reportJokes: { joke: string, score: number, date: string }[] = [];
@@ -41,7 +40,7 @@ const callAPIJoke2 = async () => {
         'x-rapidapi-host': 'chandler-bing-jokes-api.p.rapidapi.com'
       }
     });
-    const data = await response.json();
+    data = await response.json();
     currentJoke = data.joke;
     addJoke(currentJoke);
     console.log(reportJokes);
@@ -80,7 +79,6 @@ nextButton?.addEventListener('click', () => {
     callAPIJoke();
     blob?.classList.add('magicpattern');
     blob?.classList.remove('magicpattern2');
-    //classTogle
   } else {
     callAPIJoke2();
     blob?.classList.add('magicpattern2');
@@ -104,9 +102,9 @@ const callAPIWeather = async () => {
     const urlIcon = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 
     if (temp !== undefined && iconCode) {
-      dataWeather(`  |  ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
+      addWeather(`  |  ${((temp - 32) * 5 / 9).toFixed(2)}°C`, urlIcon);
     } else {
-      dataWeather('No se pudo obtener el clima actual');
+      addWeather('No se pudo obtener el clima actual');
     }
 
   } catch (err) {

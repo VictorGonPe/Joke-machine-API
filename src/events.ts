@@ -35,7 +35,7 @@ export function resetPoint() {
     currentPoint = 0;
 }
 
-export function dataWeather(dataAPIWeather: string, iconUrl?: string) {
+export function addWeather(dataAPIWeather: string, iconUrl?: string) {
     const textWeather = document.querySelector('.weather');
     if (textWeather) {
         textWeather.innerHTML = iconUrl
