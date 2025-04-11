@@ -36,10 +36,13 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
     cd Joke-machine-API
     ```
 
-2. If the project uses npm for dependency management, install packages:
+2. For dependency management, install packages (sass, typeScript)::
 
     ```bash
     npm install
+    ```
+     ```bash
+    npm run dev
     ```
 
 3. Open the project in a code editor.

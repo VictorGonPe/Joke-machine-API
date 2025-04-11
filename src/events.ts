@@ -1,45 +1,37 @@
-let currentPoint: number;
+import { buttons, blob } from "./dom";
+import { getPoint, resetPoint } from "./score";
+import { callAPIJoke, currentJoke } from "./api-service.js";
+import { joke1, joke2 } from "./api-data.js";
 
-export function addJoke(datos: string) {
+let reportJokes: { joke: string, score: number, date: string }[] = [];
+let state = 1;
 
-    const p = document.getElementById('joke');
-    if (p) {
-        p.innerText = datos;
+export const eventNextJoke = buttons.nextButton?.addEventListener('click', () => {
+    if (!buttons.nextButton) return;
+
+    buttons.nextButton.disabled = true;
+    const score = getPoint();
+
+    reportJokes.push({
+        joke: currentJoke,
+        score: score,
+        date: new Date().toISOString()
+    });
+
+    console.log(reportJokes);
+
+    resetPoint();
+
+    if (state === 1) {
+        callAPIJoke(joke1.url, joke1.header);
+        blob?.classList.add('magicpattern2');
+        blob?.classList.remove('magicpattern');
+        state = 2;
+    } else {
+        callAPIJoke(joke2().url, joke2().header);
+        blob?.classList.add('magicpattern');
+        blob?.classList.remove('magicpattern2');
+        state = 1;
     }
-}
-
-export function rateButtons() {
-    const btnOneStart = document.querySelector('.btnOne');
-    const btnTwoStart = document.querySelector('.btnTwo');
-    const btnTreeStart = document.querySelector('.btnTree');
-
-    btnOneStart?.addEventListener('click', () => {
-        currentPoint = 1;
-    })
-
-    btnTwoStart?.addEventListener('click', () => {
-        currentPoint = 2;
-    })
-
-    btnTreeStart?.addEventListener('click', () => {
-        currentPoint = 3;
-    })
-    return currentPoint;
-}
-
-export function getPoint() {
-    return currentPoint;
-}
-
-export function resetPoint() {
-    currentPoint = 0;
-}
-
-export function dataWeather(dataAPIWeather: string, iconUrl?: string) {
-    const textWeather = document.querySelector('.weather');
-    if (textWeather) {
-        textWeather.innerHTML = iconUrl
-          ? `<img src="${iconUrl}" alt="icono del clima" style="width: 50px; vertical-align: middle;"> ${dataAPIWeather}`
-          : dataAPIWeather;
-      }
-}
+    buttons.nextButton.disabled = false;
+});
