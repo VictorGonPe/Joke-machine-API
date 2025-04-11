@@ -17,6 +17,25 @@ export const callAPIJoke = async (urlAPI: string, headerObject: Record<string, s
     }
 }
 
+export const callAPIJoke2 = async (urlAPI: string, headerObject: Record<string, string>) => {
+
+    try {
+        const response = await fetch(urlAPI, {
+            headers: headerObject
+        });
+        const data = await response.json();
+        currentJoke = data.joke;
+        addJoke(currentJoke);
+
+    } catch (error) {
+        console.error('Error to read the API Joke 2', error);
+        return {
+            status: 'error',
+            message: 'Error to read the API Joke 2',
+            data: null
+        };
+    }
+}
 
 export const callAPIWeather = async (urlAPI: string, headerObject: Record<string, string>) => {
     try {
@@ -48,3 +67,5 @@ export const callAPIWeather = async (urlAPI: string, headerObject: Record<string
         }
     }
 }
+
+export { currentJoke };
