@@ -53,7 +53,6 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 - Navigate to the project folder and open **index.html**.
 
 ### **Option 2**: Use Vite Server  
-- run ```bash 
-npm run dev
-``` 
-and copy the url into your browser **http://localhost:5174/**
+- Run `npm run dev` in the terminal.
+- Then open the following URL in your browser: **http://localhost:5174/**
+
