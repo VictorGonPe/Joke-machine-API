@@ -52,5 +52,7 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 ### **Option 1**: Open directly in the browser  
 - Navigate to the project folder and open **index.html**.
 
-### **Option 2**: Use Live Server in VS Code  
-- Right-click on **index.html** and select **"Open with Live Server"**.
+### **Option 2**: Use Vite Server  
+- Run `npm run dev` in the terminal.
+- Then open the following URL in your browser: **http://localhost:5174/**
+
