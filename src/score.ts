@@ -3,7 +3,6 @@ import { buttons } from "./dom";
 let currentPoint: number;
 
 export function rateButtons() {
-
     buttons.btnOneStar?.addEventListener('click', () => {
         currentPoint = 1;
     })
