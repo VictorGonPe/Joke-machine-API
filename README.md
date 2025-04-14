@@ -22,7 +22,11 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 
 - **Modern browser**: Chrome, Firefox, Safari, Edge.
 - **Code editor**: VS Code, Sublime Text (to edit or view the code).
-- **Basic knowledge of HTML, SASS, Bootstrap, TypeScript and JavaScript.**
+
+## Developer Prerequisites (Optional)
+
+To understand or modify the code, you should have:
+- **Basic knowledge of HTML, SASS, Bootstrap 5, TypeScript and JavaScript.**
 
 ## Installation
 
@@ -69,5 +73,5 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 
 ### **Option 2**: Use Vite Server  
 - Run `npm run dev` in the terminal.
-- Then open the following URL in your browser: **http://localhost:5174/**
+- Open the local development URL shown in the terminal (e.g. `http://localhost:5173/`)
 
