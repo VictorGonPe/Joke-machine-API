@@ -18,10 +18,10 @@ export const callAPIJoke = async (urlAPI: string, headerObject: Record<string, s
         addJokeText(currentJoke);
 
     } catch (error) {
-        console.error('Error to read the API Joke 2', error);
+        console.error('Error to read the API Joke', error);
         return {
             status: 'error',
-            message: 'Error to read the API Joke 2',
+            message: 'Error to read the API Joke',
             data: null
         };
     }

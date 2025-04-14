@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "vite preview",
     "dev": "vite",
-    "sass:watch": "sass --watch src/scss:dist/css"
+    "tsc:watch": "tsc --watch",
+    "sass:watch": "sass --watch src/styles/main.scss:dist/styles.css"
   },
   "repository": {
     "type": "git",
