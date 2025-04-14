@@ -3,7 +3,6 @@ import { joke2, weather } from "./api-data.js";
 import { callAPIJoke, callAPIWeather } from "./api-service.js";
 import { blob } from "./dom.js";
 import { eventNextJoke } from "./events.js";
-// src/index.ts
 import './styles/main.scss';
 
 
