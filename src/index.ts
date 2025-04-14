@@ -13,9 +13,9 @@ blob?.classList.add('magicpattern2');
 
 callAPIJoke(joke2().url, joke2().header);
 
-callAPIWeather(weather.url,weather.header);
+//callAPIWeather(weather.url,weather.header);
 
-eventNextJoke;
+eventNextJoke();
 
 
 

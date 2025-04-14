@@ -2,7 +2,7 @@ import { buttons } from "./dom";
 
 let currentPoint: number;
 
-export function rateButtons() {
+export function rateButtons(): void {
     buttons.btnOneStar?.addEventListener('click', () => {
         currentPoint = 1;
     })
@@ -14,13 +14,12 @@ export function rateButtons() {
     buttons.btnTreeStar?.addEventListener('click', () => {
         currentPoint = 3;
     })
+}
+
+export function getPoint(): number {
     return currentPoint;
 }
 
-export function getPoint() {
-    return currentPoint;
-}
-
-export function resetPoint() {
+export function resetPoint(): void {
     currentPoint = 0;
 }
