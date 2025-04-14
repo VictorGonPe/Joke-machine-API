@@ -47,6 +47,21 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 
 3. Open the project in a code editor.
 
+4. Set up Environment Variables
+
+    Create a .env file at the root of the project with the following variables:
+
+    ```env
+    VITE_API_KEY_WEATHER=your_weather_api_key
+    VITE_API_KEY_JOKE=your_joke_api_key
+    ```
+
+    These API keys are required to fetch data from the weather and joke services.
+    You can obtain them from RapidAPI.
+
+    The API endpoints and usage logic are located in the file src/api-data.ts.
+
+
 ## Execution
 
 ### **Option 1**: Open directly in the browser  
