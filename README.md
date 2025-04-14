@@ -1,6 +1,5 @@
 # Joke-machine-API
 
-
 ![Preview](src/assets/img/previsualizacion.png "Joke Machine")
 
 ## Sprint Description
@@ -26,52 +25,58 @@ Development of a **joke website** using **Bootstrap 5**, **SASS**, **TypeScript*
 ## Developer Prerequisites (Optional)
 
 To understand or modify the code, you should have:
+
 - **Basic knowledge of HTML, SASS, Bootstrap 5, TypeScript and JavaScript.**
 
 ## Installation
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/VictorGonPe/Joke-machine-API.git
-    ```
+   ```bash
+   git clone https://github.com/VictorGonPe/Joke-machine-API.git
+   ```
 
-    ```bash
-    cd Joke-machine-API
-    ```
+   ```bash
+   cd Joke-machine-API
+   ```
 
-2. For dependency management, install packages (sass, typeScript)::
+2. Install dependencies (SASS, TypeScript, Vite, etc.):
 
-    ```bash
-    npm install
-    ```
-     ```bash
-    npm run dev
-    ```
+   ```bash
+   npm install
+   ```
 
-3. Open the project in a code editor.
+3. Run the development environment in **separate terminals**:
 
-4. Set up Environment Variables
+   ```bash
+   npm run dev
+   npm run sass:watch
+   npm run tsc:watch
+   ```
 
-    Create a .env file at the root of the project with the following variables:
+4. Open the project in a code editor.
 
-    ```env
-    VITE_API_KEY_WEATHER=your_weather_api_key
-    VITE_API_KEY_JOKE=your_joke_api_key
-    ```
+5. Set up Environment Variables
 
-    These API keys are required to fetch data from the weather and joke services.
-    You can obtain them from RapidAPI.
+   Create a .env file at the root of the project with the following variables:
 
-    The API endpoints and usage logic are located in the file src/api-data.ts.
+   ```env
+   VITE_API_KEY_WEATHER=your_weather_api_key
+   VITE_API_KEY_JOKE=your_joke_api_key
+   ```
 
+   These API keys are required to fetch data from the weather and joke services.
+   You can obtain them from RapidAPI.
+
+   The API endpoints and usage logic are located in the file src/api-data.ts.
 
 ## Execution
 
-### **Option 1**: Open directly in the browser  
+### **Option 1**: Open directly in the browser
+
 - Navigate to the project folder and open **index.html**.
 
-### **Option 2**: Use Vite Server  
+### **Option 2**: Use Vite Server
+
 - Run `npm run dev` in the terminal.
 - Open the local development URL shown in the terminal (e.g. `http://localhost:5173/`)
-
